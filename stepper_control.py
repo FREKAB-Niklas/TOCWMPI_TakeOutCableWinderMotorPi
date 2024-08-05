@@ -14,17 +14,21 @@ GPIO.setup(DIR, GPIO.OUT)
 
 # Set direction
 GPIO.output(DIR, GPIO.HIGH)  # Change to GPIO.LOW for opposite direction
+print("Direction set to HIGH")
 
 # Number of steps
-steps = 2000
+steps = 200
 
 try:
-    for _ in range(steps):
+    for i in range(steps):
         GPIO.output(PUL, GPIO.HIGH)
-        time.sleep(0.001)  # Adjust pulse width for motor speed
+        print(f"Step {i+1}: PUL HIGH")
+        time.sleep(0.01)  # Slower pulse for easier observation
         GPIO.output(PUL, GPIO.LOW)
-        time.sleep(0.001)
+        print(f"Step {i+1}: PUL LOW")
+        time.sleep(0.01)
 except KeyboardInterrupt:
-    pass
+    print("Script interrupted by user")
 finally:
     GPIO.cleanup()
+    print("GPIO cleanup complete")
