@@ -1,6 +1,12 @@
 import RPi.GPIO as GPIO
 import time
 
+import RPi.GPIO as GPIO
+import time
+
+# Disable GPIO warnings
+GPIO.setwarnings(False)
+
 # GPIO pin setup
 PUL = 17  # Pulse pin
 DIR = 27  # Direction pin
