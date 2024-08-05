@@ -17,7 +17,7 @@ GPIO.output(DIR, GPIO.HIGH)  # Change to GPIO.LOW for opposite direction
 print("Direction set to HIGH")
 
 # Number of steps
-steps = 200
+steps = 1600
 
 try:
     for i in range(steps):
